@@ -1,4 +1,7 @@
 MhealthExampleLoader::Application.routes.draw do
+  root to: 'high_voltage/pages#show', id:'index'
+
+  match '/auth/:provider/callback' => 'authorization#create'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
