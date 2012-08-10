@@ -9,5 +9,7 @@ class AuthorizationController < ApplicationController
 
     session[:mhealth_token] = auth['credentials']['token']
     session[:mhealth_auth] = auth
+
+    redirect_to new_sample_path
   end
 end
