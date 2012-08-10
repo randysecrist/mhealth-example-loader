@@ -3,4 +3,6 @@ MhealthExampleLoader::Application.routes.draw do
 
   match '/start' => 'authorization#new', as: 'new_authorization'
   match '/auth/:provider/callback' => 'authorization#update'
+
+  resource 'sample'
 end
