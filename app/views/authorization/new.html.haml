@@ -1,0 +1,19 @@
+%h1 Get Started
+= form_tag '/auth/mhealth', class: 'form-horizontal well' do |f|
+  %fieldset
+    %legend What applications would you like to work with?
+    = app_checkbox 'fitbit'
+    = app_checkbox 'myzeo'
+    = app_checkbox 'withings'
+    .control-group
+      %label.control-label Your App
+      .controls
+        = text_field_tag 'app[]'
+        %p.help_block
+          Enter the 'Product Key/Client ID' displayed on your
+          = link_to 'mHealth App List', 'https://mhealth.att.com/dev/apps'
+          or as listed in the
+          = link_to 'mHealth Application Catalog.', 'https://mhealth.att.com/dev/sources'
+    .control-group
+      .controls
+        = submit_tag 'Connect with mHealth', class: 'btn btn-primary'

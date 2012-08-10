@@ -1,5 +1,8 @@
 class AuthorizationController < ApplicationController
-  def create
+  def new
+  end
+
+  def update
     if !auth = request.env['omniauth.auth']
       return redirect_to root_path
     end
