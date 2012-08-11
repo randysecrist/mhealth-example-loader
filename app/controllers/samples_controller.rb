@@ -27,8 +27,6 @@ class SamplesController < ApplicationController
       end
     end
 
-    File.open('tmp/fart.log', 'a') {|f| f.puts @sources.inspect }
-
     @sources.each do |k,v|
       api_client.post do |req|
         req.url "/v2/health/source/#{k}/data"
