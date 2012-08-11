@@ -12,4 +12,9 @@ class AuthorizationController < ApplicationController
 
     redirect_to new_sample_path
   end
+
+  def destroy
+    reset_session
+    redirect_to root_path
+  end
 end

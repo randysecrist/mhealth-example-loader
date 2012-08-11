@@ -1,4 +1,39 @@
-%h1 Token Get!
-%p API token: #{session[:mhealth_token]}
-%pre
-  &= session.inspect
+%h1 Who Are You?
+%p
+  You're logged in as:
+  = session[:mhealth_auth][:info][:name]
+  (#{session[:mhealth_auth][:info][:email]})
+%p
+  Wrong account?
+%p
+  = link_to 'Disconnect from mHealth', destroy_authorization_path, class: 'btn btn-danger'
+
+%h1 Generate Data
+%p
+  Below is a list of measures we can read and write.
+  Check the box on the right of a row if you want to generate a week of random data for
+  that particular field.
+= form_tag sample_path do |f|
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Source
+        %th Field Name
+        %th Type
+        %th Example
+        %th Generate?
+    %tbody
+      - @fields.each do |f|
+        %tr
+          %td= f.source
+          %td= f.name
+          %td= f.type
+          %td
+            = f.value
+            = f.unit
+          %td
+            %label
+              = check_box_tag "generate[#{f.source}/#{f.name}]"
+              Generate
+  %p
+    = submit_tag 'Generate Data', class: 'btn btn-primary'
