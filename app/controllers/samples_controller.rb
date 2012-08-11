@@ -37,7 +37,17 @@ class SamplesController < ApplicationController
       end
     end
 
-    render text: session[:mhealth_token]
+    session[:sources] = @sources.keys
+    redirect_to sample_path
+  end
+
+  def show
+    @sources = session[:sources].map do |s|
+      [
+        s,
+        "https://api-mhealth.att.com/v2/health/source/#{s}/data?oauth_token=#{session[:mhealth_token]}"
+      ]
+    end
   end
 
   private

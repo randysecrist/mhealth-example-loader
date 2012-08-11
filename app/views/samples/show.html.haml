@@ -1,0 +1,19 @@
+%h1 Data Loaded
+%p
+  We've loaded sample data in to your account. Curious?
+%dl.dl-horizontal
+  - @sources.each do |s|
+    %dt= s[0]
+    %dd= link_to s[1], s[1]
+
+%h1 Want more sample data?
+%ul.nav.nav-pills
+  %li= link_to 'Start Over', root_path, class: 'btn btn-danger'
+  %li= link_to 'Just let me pick some fields', new_sample_path, class: 'btn'
+
+:markdown
+  # What's Next?
+
+  Read the [mHealth API Documentation](https://mhealth.att.com/dev/documentation)
+  or perhaps the
+  [Developing with mHealth guide](https://mhealth.att.com/dev/documentation/mhealth/hack).
