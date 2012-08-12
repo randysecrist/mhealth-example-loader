@@ -7,4 +7,6 @@ MhealthExampleLoader::Application.routes.draw do
   match '/logout' => 'authorization#destroy', as: 'destroy_authorization'
 
   resource 'sample'
+
+  mount SinatraExample, at: '/api/v1'
 end
