@@ -8,23 +8,23 @@ HTTP requests.
 == Getting Started
 
 1. Clone this project from github
-       <tt>git clone https://github.com/bkerley/mhealth-example-loader.git</tt>
+       git clone https://github.com/bkerley/mhealth-example-loader.git
 
 2. Change directory to <tt>mhealth-example-loader</tt>:
-       <tt>cd mhealth-example-loader</tt>
+       cd mhealth-example-loader
 
 3. Install dependencies:
-       <tt>bundle install</tt>
+       bundle install
 
 4. Get OAuth2 credentials for mHealth at https://mhealth.att.com/dev/apps
 
 5. Load the OAuth credentials into environment variables. For local development
    using rbenv, I put this in <tt>.rbenv-vars</tt>:
-       <tt>MHEALTH_KEY=mhealth-example-loader-dev
-           MHEALTH_SECRET=example-secret-dont-use-this</tt>
+       MHEALTH_KEY=mhealth-example-loader-dev
+       MHEALTH_SECRET=example-secret-dont-use-this
 
 6. Start the app:
-       <tt>rails server</tt>
+       rails server
 
 7. Go to http://localhost:3000/ and you'll see:
        "mHealth Example Loader"
@@ -133,6 +133,4 @@ test
   Nothing of value because I've been bad!
 
 vendor
-  External libraries that the application depends on. Also includes the plugins
-  subdirectory. If the app has frozen rails, those gems also go here, under
-  vendor/rails/. This directory is in the load path.
+  External libraries that the application depends on. Not much in this case!
