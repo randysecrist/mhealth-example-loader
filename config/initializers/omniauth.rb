@@ -3,6 +3,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
            client_options: {
             site: 'https://mhealth.next.attcompute.com/'
             },
+            api_site: 'https://api-mhealth.next.attcompute.com/',
            setup:(lambda do |env|
     request = Rack::Request.new env
     scopes = %w{/read/health/user}
