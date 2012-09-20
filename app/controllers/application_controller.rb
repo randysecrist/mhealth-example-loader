@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   end
 
   def self.api_client_for(token)
-    Faraday.new 'https://api-mhealth.att.com/' do |builder|
+    Faraday.new 'https://api-mhealth.next.attcompute.com/' do |builder|
       builder.use Faraday::Request::Authorization, 'OAuth', token
       builder.adapter :net_http
     end
