@@ -12,7 +12,8 @@ gem 'omniauth-mhealth'
 gem 'bootstrap-sass'
 gem 'high_voltage'
 gem 'haml-rails'
-gem 'rdiscount'
+# gem 'rdiscount'
+gem 'BlueCloth'
 
 # Gems used only for assets and not required
 # in production environments by default.
