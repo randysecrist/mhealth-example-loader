@@ -1,9 +1,9 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider(:mhealth, ENV['MHEALTH_KEY'], ENV['MHEALTH_SECRET'], 
            client_options: {
-            site: 'https://mhealth.next.attcompute.com/'
+            site: 'https://demo.mhp.sl.attcompute.com/'
             },
-            api_site: 'https://api-mhealth.next.attcompute.com/',
+            api_site: 'https://api.demo.mhp.sl.attcompute.com/',
            setup:(lambda do |env|
     request = Rack::Request.new env
     scopes = %w{/read/health/user}
