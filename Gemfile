@@ -7,7 +7,7 @@ gem 'rails', '3.2.7'
 
 gem 'pg'
 
-gem 'omniauth-mhealth', '~> 0.0.2'
+gem 'omniauth-mhealth', '~> 0.0.3'
 
 gem 'bootstrap-sass'
 gem 'high_voltage'
