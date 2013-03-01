@@ -16,11 +16,12 @@ class SamplesController < ApplicationController
       @fields_to_populate << @field_hash[k]
     end
 
+    @generate_from = Time.parse(params[:date][0]) rescue Time.now
     @sources = Hash.new{Array.new}
     @fields_to_populate.each do |f|
-      (0..7).each do |d|
+      (0..31).each do |d|
         data = @sources[f.source]
-        timestamp = Time.now - d.days
+        timestamp = @generate_from - d.days
         datum = {timestamp: timestamp.iso8601, name: f.name, value: f.value, unit: f.unit}
         data << datum
         @sources[f.source] = data
@@ -43,7 +44,7 @@ class SamplesController < ApplicationController
     @sources = session[:sources].map do |s|
       [
         s,
-        "https://api-mhealth.att.com/v2/health/source/#{s}/data?oauth_token=#{session[:mhealth_token]}"
+        "https://api.demo.mhp.sl.attcompute.com/v2/health/source/#{s}/data?oauth_token=#{session[:mhealth_token]}"
       ]
     end
   end

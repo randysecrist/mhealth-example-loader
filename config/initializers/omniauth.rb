@@ -1,7 +1,8 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider(:mhealth, ENV['MHEALTH_KEY'], ENV['MHEALTH_SECRET'], 
            client_options: {
-            site: 'https://demo.mhp.sl.attcompute.com/'
+            site: 'https://demo.mhp.sl.attcompute.com/',
+            ssl: {verify: false}
             },
             api_site: 'https://api.demo.mhp.sl.attcompute.com/',
            setup:(lambda do |env|
