@@ -44,7 +44,7 @@ class SamplesController < ApplicationController
     @sources = session[:sources].map do |s|
       [
         s,
-        "https://api.demo.mhp.sl.attcompute.com/v2/health/source/#{s}/data?oauth_token=#{session[:mhealth_token]}"
+        "https://api-mhealth.dev.attcompute.com/v2/health/source/#{s}/data?oauth_token=#{session[:mhealth_token]}"
       ]
     end
   end
