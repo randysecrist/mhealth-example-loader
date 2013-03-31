@@ -11,9 +11,15 @@
 %h1 Generate Data
 %p
   Below is a list of measures we can read and write.
-  Check the box on the right of a row if you want to generate a week of random data for
+  Check the box on the right of a row if you want to generate a month of random data for
   that particular field.
 = form_tag sample_path do |f|
+  .control-group
+    %label.control-label From Date 
+    .controls
+      = text_field_tag 'date[]'
+      %p.help_block
+        Enter the date using the following format '2013-03-10 00:00:00 UTC' from which measures should be generated
   %table.table.table-striped
     %thead
       %tr
