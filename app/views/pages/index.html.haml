@@ -4,3 +4,5 @@
     Use this application to load example data into your mHealth account.
   %p
     =link_to 'Get Started', new_authorization_path, class: 'btn btn-primary'
+%p{:style=>'text-align: right'}
+  =link_to "Version #{MHealth::ExampleLoader::VERSION}", 'https://github.com/randysecrist/mhealth-example-loader'
