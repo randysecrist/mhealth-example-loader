@@ -7,12 +7,11 @@ gem 'rails', '~> 3.2.12'
 
 gem 'pg'
 
-gem 'omniauth-mhealth'
+gem 'omniauth-mhealth', '~> 0.0.3'
 
 gem 'bootstrap-sass'
 gem 'high_voltage'
 gem 'haml-rails'
-# gem 'rdiscount'
 gem 'BlueCloth'
 
 # Gems used only for assets and not required
