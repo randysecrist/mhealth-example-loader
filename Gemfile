@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.7'
+gem 'rails', '~> 3.2.12'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -12,7 +12,8 @@ gem 'omniauth-mhealth', '~> 0.0.3'
 gem 'bootstrap-sass'
 gem 'high_voltage'
 gem 'haml-rails'
-gem 'rdiscount'
+# gem 'rdiscount'
+gem 'BlueCloth'
 
 # Gems used only for assets and not required
 # in production environments by default.
