@@ -30,7 +30,7 @@ HTTP requests.
        "mHealth Example Loader"
 
 8. Follow the UI to load example data into your account. For more information on
-   developing with mHealth, visit https://mhealth.att.com/hack
+   developing with mHealth, visit https://mhealth.dev.attcompute.com/hack
 
 == Description of Contents
 

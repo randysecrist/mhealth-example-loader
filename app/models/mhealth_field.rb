@@ -29,7 +29,7 @@ class MhealthField
     when 'pressure'
       'psi'
     when 'frequency'
-      'hertz'
+      'hz'
     else
       'example_unit'
     end
