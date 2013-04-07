@@ -8,8 +8,9 @@ Rails.application.config.middleware.use OmniAuth::Builder do
            setup:(lambda do |env|
     request = Rack::Request.new env
     scopes = %w{/read/health/user}
-    if request.params['app']
-      request.params['app'].each do |a|
+    apps = request.params['app'].reject {|x| x == ""} if request.params['app']
+    if apps
+      apps.each do |a|
         scopes << "/read/health/data/#{a}" << "/admin/health/source/#{a}"
       end
     end
